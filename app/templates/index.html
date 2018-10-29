@@ -1,0 +1,64 @@
+{%set description = 'The index page contains the following information: Menu to resume and other site pages, work skills and experience summaries, and current work status.'%}
+{%set keywords = "Resume,Software Engineer,Systems Engineer,Programmer,Developer,Administrator,linux,Karl N. Redman"%}
+{% extends "base.html" %}
+
+{% block content %}
+<header class="index_header">
+    <div class="jumbotron inline-block p-0"  align="" style="width: 100%;">
+        <!-- <img src="{{url_for('static', filename='images/Profile_image.jpg')}}" class="float-left" style="padding-right: 10px; padding-left: 0px;"> -->
+        <!-- <img class="index_header_img" src="{{url_for('static', filename='images/Profile_image.jpg')}}" style="padding-right: 10px; padding-left: 0px;"> -->
+        <img class="index_header_img" src="{{url_for('static', filename='images/Profile_image.jpg')}}">
+        <div class="d-inline-block" >
+            <h1>Karl N. Redman</h1>
+            <h4>Software/Systems Engineer<h4>
+        </div>
+    </div>
+</header>
+
+<!-- <div class="container-fluid index_content"> -->
+<div class="container index_content">
+
+    {% if employment_status %}
+    <span>
+        <p>
+            <div class="employment_status">
+                <span>Current Work Status:</span>
+                {% if seeking_employment %}
+                <div class="seeking_employment"><span><a href={{url_for('resume')}}>Seeking Employment</a></span></div>
+                {% else %}
+                <div class="seeking_employment"><span>Not Seeking Employment</span></div>
+                {% endif %}
+            </div>
+        </p>
+    </span>
+    {% endif %}
+
+    <p>
+        <i>I love building systems that help people accomplish their goals.</i>
+    </p>
+
+    <p>
+        My passion is developing new and exciting systems. I invent things. I find ways to make things happen. I'm known for this among my peers, relatives, and friends. I'm very good in an emergency with a "can do"/"whatever it takes" attitude. Yet I have the experience to know that not all development work is new and exciting. It is that very experience that gives me the stamina to work effectively on projects that require maintenance, tool generation and otherwise porting applications to new platforms.
+    </p>
+
+    <p>
+        <h4 class="list-heading">Highlights of my career experience:</h4>
+        <ul>
+            <li>20+ years industry experience</li>
+            <li>Software Development team lead/management</li>
+            <li>Systems Engineering team lead/management</li>
+            <li>Successful Release Engineering development/management</li>
+            <li>Inventive / Innovator / Problem-solver who can think outside of the box</li>
+            <li>High Performance Computing (development, systems engineering, and administration)</li>
+            <li>Full life cycle software application development with a large variety of languages</li>
+            <li>Experience with a very wide range of technologies and programming languages</li>
+        </ul>
+    </p>
+
+    <p>
+        Throughout my 20+ year career as a low-middleware Software Applications Engineer I have worked as a professional programmer with tens of languages across over a dozen operating systems within several architectures. This unique career experience has afforded me the opportunity to be an effective Systems Administrator and Systems Engineer where needed -at nearly every institution where I've had the privilege to be employed. I am generally considered to be outspoken in regards to my passion for business concerns relative to projects that I'm involved with. And I am equally known as a champion for the ideas and the work of others. I ask for help when I need it, I admit when I am wrong or don't know something, and I help out my peers whenever I can.
+    </p>
+
+
+</div> <!-- /container -->
+{% endblock %}

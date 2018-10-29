@@ -1,0 +1,233 @@
+/* my site.css file */
+
+#logo{
+    display: none;
+}
+
+.index_header_img{
+    float: left;
+    padding-right: 10px;
+}
+.borderless_card{
+    border: none;
+}
+
+/* .employment_status{ */
+/*     display: inline-block; */
+/* } */
+
+.seeking_employment{
+    display: inline-block;
+}
+
+
+/* .card-columns { */
+/*     @include media-breakpoint-only(xl) { */
+/*         column-count: 5; */
+/*     } */
+/*     @include media-breakpoint-only(lg) { */
+/*         column-count: 4; */
+/*     } */
+/*     @include media-breakpoint-only(md) { */
+/*         column-count: 3; */
+/*     } */
+/*     @include media-breakpoint-only(sm) { */
+/*         column-count: 2; */
+/*     } */
+/*     @include media-breakpoint-only(xs) { */
+/*         column-count: 1; */
+/*     } */
+/* } */
+
+
+
+/*My banner*/
+.banner {
+    text-align: center;
+}
+.banner .title h1,h2 {
+    display: inline-block;
+}
+.banner .work_status {
+    text-align: center;
+}
+.banner .work_status h3,h4,h5 {
+    display: inline-block;
+}
+.banner .work_status h4,h5 {
+    font-style: italic;
+}
+
+.banner .work_status span {
+    font-weight: bold;
+    color: red;
+}
+
+/* Resume */
+.resume_label {
+    text-align: left;
+}
+.resume_tech_div {
+    width: 99%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.resume_tech_div h3 {
+    text-indent: 0em;
+}
+.resume_tech_div div {
+    margin: 0 auto;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.resume_work_div {
+    width: 100%;
+}
+.resume_employer {
+    width: 100%;
+    margin: 0 auto;
+    /*text-align: left;*/
+    /*background-color: yellow;*/
+}
+.resume_employer td {
+    width: 50%;
+}
+.resume_employer .employer_name {
+    padding: 10px;
+    width: 0%;
+    font-weight: bold;
+    font-size: 120%;
+}
+.employer_desc {
+    font-style: italic;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+/* .work_list { */
+/*     margin-left: 1em; */
+/*     margin-right: 1em; */
+/* } */
+/* .work_list li { */
+/*     padding: 5px; */
+/* } */
+
+Device specifics
+@media all and (min-width: 1399px)
+{
+    .container-fluid{
+        padding-left: 10%;
+        padding-right: 10%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+@media all and (min-width: 1599px)
+{
+    .container-fluid{
+        padding-left: 15%;
+        padding-right: 15%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+@media all and (min-width: 3799px)
+{
+    .container-fluid{
+        padding-left: 30%;
+        padding-right: 30%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}
+@media all and (max-width: 3840px)
+{
+    .index_header{
+        text-align: left;
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+}
+@media all and (max-width: 1920px)
+{
+    .index_header{
+        text-align: left;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+@media all and (max-width: 1280px)
+{
+    .index_header{
+        text-align: left;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media all and (max-width: 1024px)
+{
+    .index_header{
+        text-align: left;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+@media all and (max-width: 900px)
+{
+    .card-columns {
+        column-count: 2;
+    }
+}
+@media all and (max-width: 768px)
+{
+    .card-columns {
+        column-count: 2;
+    }
+    .index_header_img{
+        float: left;
+        padding-right: 10px;
+    }
+    .index_header{
+        text-align: center;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .employment_status{
+        text-align: center;
+    }
+}
+@media all and (max-width: 500px)
+{
+    .card-columns {
+        column-count: 1;
+    }
+    .index_header_img{
+        float: none;
+        padding-top: 10px;
+    }
+    .index_header{
+        text-align: center;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .employment_status{
+        text-align: center;
+    }
+}
+@media all and (max-width: 400px)
+{
+    .index_header_img{
+        float: none;
+        padding-top: 10px;
+    }
+    .index_header{
+        text-align: center;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .employment_status{
+        text-align: center;
+    }
+}

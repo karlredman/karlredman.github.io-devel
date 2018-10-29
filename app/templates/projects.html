@@ -1,0 +1,153 @@
+{%set description = 'Projects portfolio for Karl N. Redman'%}
+{%set keywords = "Resume,Software Engineer,Systems Engineer,Programmer,Developer,Administrator,linux,Karl N. Redman, C/C++, bash, python, Release Engineer, Javascript, Linux, HPC, High Performance Computing, Full Stack, Full Stack Devloper"%}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- <header class="index_header"> -->
+<header>
+  <div class="jumbotron inline-block p-0"  align="" style="width: 100%;">
+    <div class="inline-block;" style="text-align: center;">
+        <!-- <h1 style="display:inline;">Karl N. Redman</h1> -->
+        <!-- <h2 style="display:inline;">Personal Projects:</h2> -->
+        <h1 style="">Karl N. Redman</h1>
+        <h2 style="">Personal Projects:</h2>
+    </div>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="card-columns">
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Timetrap TUI (time tracker):</h5>
+                <img class="card-img-top" src="https://github.com/karlredman/Timetrap_TUI/blob/master/devel/demo/screenshot.gif?raw=true" alt="Card image cap">
+                <p class="card-text">
+                    A node.js based event driven terminal user interface application for the ruby based 'Simple command line timetracker' Timetrap.
+                    <ul>
+                        <li>Code: Javascript (ndoe.js)</li>
+                        <li>Status: Active</li>
+                        <li><a href="https://github.com/karlredman/Timetrap_TUI"><i class="fa fa-github"></i> GitHub Page</a>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <!--*********************************-->
+        <!--blank card-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> Vimwiki+Gollum Integration:
+                </h5>
+                <img class="card-img-top" src="https://github.com/karlredman/Vimwiki-Gollum-Integration/blob/master/docs/screenshot/screenshot.gif?raw=true" alt="Card image cap">
+                <p class="card-text">
+                    A guide and tutorial, with tools and 'out of the box' examples, for integrating Vimwiki with Gollum Wiki on Linux systems. The aim of this project is to provide a fairly easy installation and setup for a working Vimwiki + Gollum workflow.
+                    <ul>
+                        <li>Code: Ruby, Bash
+                        </li>
+                        <li>Status: Active / Complete
+                        </li>
+                        <li><a href="https://github.com/karlredman/Vimwiki-Gollum-Integration"><i class="fa fa-github"></i> GitHub Page</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> Dirp (dirs stack manager):
+                </h5>
+                <a href="https://asciinema.org/a/jmH6bzcn0XMFPt8qPVMuvE3gr?autoplay=1"><img class="card-img-top" src="https://asciinema.org/a/jmH6bzcn0XMFPt8qPVMuvE3gr.png" alt="Card image cap"></a>
+                <p class="card-text">
+                    A bash shell workflow system to help manage the builtin stack functions dirs, pushd, popd.
+                    <ul>
+                        <li>Code: Bash
+                        </li>
+                        <li>Status: Active
+                        </li>
+                        <li><a href="https://github.com/karlredman/dirp"><i class="fa fa-github"></i> GitHub Page</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> Multithreaded Python Scraper (example):
+                </h5>
+                <p class="card-text">
+                    A true multigreaded python web scraping and file downloading application example. Eventually this will be a tutorial project -WIP.
+                    <ul>
+                        <li>Code: Python
+                        </li>
+                        <li>Status: Actively (being rewritten)
+                        </li>
+                        <li>Caveats: Project is under reconstruction
+                        <li><a href=""><i class="fa fa-github"></i> GitHub Page</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> How To Be A Computer Programmer (article):
+                </h5>
+                <p class="card-text">
+                    A truthful article about what it takes to become the best programmer you can be. This is a realistic approach that pulls no punches for those who want an honost point of view about what it takes to engage in this trade.
+                    <ul>
+                        <li>Code: Article
+                        </li>
+                        <li>Status: Active
+                        </li>
+                        <li><a href="https://medium.com/@karl.redman/how-to-be-a-computer-programmer-b98fa533487a"><i class="fa fa-medium"></i> Medium Article</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"> Shared Condition Variable Eumlation:
+                </h5>
+                <p class="card-text">
+                    The POSIX standard for shared condition variables across processes is honored by most UNIX implementations <b>except Linux</b>. In order to provide uniform behavior of the condition variable mechanism a different solution for Linux had to be divined. The code examples provided here demonstrate one solution using signaling.
+                    <ul>
+                        <li>Code: C/C++
+                        </li>
+                        <li>Status: Complete
+                        </li>
+                        <li><a href="https://karlredman.github.io/cond-var/"><i class="fa fa-file-code-o"></i> Project Page</a> </li>
+                        <li><a href="https://github.com/karlredman/cond-var"><i class="fa fa-github"></i> GitHub Page</a> </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+
+        <!--*********************************-->
+        <div class="card text-center p-3">
+            <a href="{{url_for('projects_old')}}">
+            <blockquote class="blockquote mb-0">
+                    <p>Older, mostly retired projects...</p>
+            </blockquote>
+                </a>
+        </div>
+
+    </div> <!-- --card-columns -->
+</div> <!-- /container -->
+
+
+{% endblock %}

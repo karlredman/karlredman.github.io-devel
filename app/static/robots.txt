@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://karlredman.github.io/sitemap.xml

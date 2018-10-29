@@ -1,0 +1,119 @@
+{%set description = 'Projects portfolio for Karl N. Redman'%}
+{%set keywords = "Resume,Software Engineer,Systems Engineer,Programmer,Developer,Administrator,linux,Karl N. Redman, C/C++, bash, python, Release Engineer, Javascript, Linux, HPC, High Performance Computing, Full Stack, Full Stack Devloper"%}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- <header class="index_header"> -->
+<header>
+  <div class="jumbotron inline-block p-0"  align="" style="width: 100%;">
+    <div class="inline-block;" style="text-align: center;">
+        <!-- <h1 style="display:inline;">Karl N. Redman</h1> -->
+        <!-- <h2 style="display:inline;">Personal Projects:</h2> -->
+        <h1 style="">Karl N. Redman</h1>
+        <h2 style="">Older Personal Projects:</h2>
+    </div>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="card-columns">
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">run-free: GUI Command Line Launcher:</h5>
+                <img class="card-img-top" src="http://run-free.sourceforge.net/run-free.jpg" alt="Card image cap">
+                <p class="card-text">
+                    run-free is a GUI (gtk) command line launcher application for your Xwindows desktop. It is designed to be key-driven and flexible.
+                    <ul>
+                        <li>Code: C (GTK 1/2)</li>
+                        <li>Status: <b>Retired</b></li>
+                        <li><a href="https://github.com/karlredman/run-free"><i class="fa fa-github"></i> GitHub Page</a>
+                        <li><a href="http://run-free.sourceforge.net/"><i class="fa fa-file-code-o"></i> Original Sourceforge Page</a>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">C++ #pragma Byte packing conversions
+                </h5>
+                <p class="card-text">
+                    Decoded byte re-packing across a network (little endian to big endian, etc.).
+                    Includes anonymous and variable length structure recoding. This was originally
+                    a proof of concept project.
+                    <ul>
+                        <li>Code: C++/C</li>
+                        <li>Status: <b>Stable/Complete/Retired</b></li>
+                        <li><a href="https://github.com/karlredman/PragmaAlign"><i class="fa fa-github"></i> GitHub Page</a>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">MyGtkCID: Simple Caller ID example modem application
+                </h5>
+                <p class="card-text">
+                    A simple console and gtk+ GUI test program for reporting Caller ID information.
+                    <ul>
+                        <li>Code: C/C++ (GTK+ 1/2)</li>
+                        <li>Status: <b>Complete/Retired</b></li>
+                        <li><a href="https://github.com/karlredman/MyGtkCID"><i class="fa fa-github"></i> GitHub Page</a>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Various C++ Examples (Including IPC)
+                </h5>
+                <p class="card-text">
+                   This project consists of various C++ examples from very
+                   basic concepts to somewhat more complex subject matter. In
+                   particular, basic C++ language features are demonstrated
+                   here alongside some fairly complex IPC (interprocess
+                   communications) implementations. The Project Page includes
+                   <b>Doxygen</b> documentation.
+                    <ul>
+                        <li>Code: C++ / Doxygen</li>
+                        <li>Status: <b>Retired/Outdated</b></li>
+                        <li><a href="https://github.com/karlredman/CPP_Examples"><i class="fa fa-github"></i> GitHub Page</a>
+                        <li><a href="https://karlredman.github.io/CPP_Examples"><i class="fa fa-file-code-o"></i> Project Page</a>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <!--*********************************-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">C++ multithreaded POSIX Timer usage
+                </h5>
+                <p class="card-text">
+                    This is an example of a POSIX timer project. The code here is provided for reference purposes and may be helpful to new IPC (interprocess communications) programmers.
+                    <ul>
+                        <li>Code: C++</li>
+                        <li>Status: <b>Complete/Retired</b></li>
+                        <li><a href="https://github.com/karlredman/POSIX_Timers"><i class="fa fa-github"></i> GitHub Page</a>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+
+    </div> <!-- --card-columns -->
+</div> <!-- /container -->
+
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{%set description = 'FAQ about Karl N. Redman. Software Engineer and Systems Engineer. Provides information regarding work history, and other personal aspects pertaining to career.'%}
+{%set keywords = "Resume,Software Engineer,Systems Engineer,Programmer,Developer,Administrator,linux,Karl N. Redman, C/C++, bash, python, Release Engineer, Javascript, Linux, HPC, High Performance Computing, Full Stack, Full Stack Devloper"%}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- <header class="index_header"> -->
+<header>
+    <div class="jumbotron inline-block p-0"  align="" style="width: 100%;">
+        <div class="inline-block;" style="text-align: center;">
+            <!-- <h1 style="display:inline;">Karl N. Redman</h1> -->
+            <!-- <h2 style="display:inline;">Personal Projects:</h2> -->
+            <h1 style="">Karl N. Redman</h1>
+            <h2 style="">About this website:</h2>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid">
+
+    <div class="card borderless_card">
+        <div class="card-body">
+            <!-- <h5 class="card-title">About this website:</h5> -->
+            <p class="card-text">
+                This is a reactive static website generated from inline content
+                using <a href="http://flask.pocoo.org/">Flask</a> and <a
+                         href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a>.
+                     Sources for this simple project can be found <a href="https://github.com/karlredman/karlredman.github.io">here</a>.
+            </p>
+        </div>
+    </div>
+
+    <!--*********************************-->
+    <div class="card borderless_card">
+        <div class="card-body">
+            <!-- <h5 class="card-title">Site links:</h5> -->
+            <p class="card-text">
+
+                <h3 class="list-heading">Site Links</h3>
+                <ul>
+                    <li><a href="https://karlredman.github.io"><i class="fa fa-home"></i> Home Page</a></li>
+                    <li><a href="https://github.com/karlredman/karlredman.github.io"><i class="fa fa-github"></i> Project Page</a></li>
+                    <li><a href="{{url_for('static', filename='robots.txt')}}">robots.txt</a></li>
+                    <li><a href="{{url_for('static', filename='sitemap.xml')}}">sitemap.xml</a></li>
+                </ul>
+
+                <h3 class="list-heading">Languages/Frameworks</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>Flask / Frozen-Flask</li>
+                    <li>Python</li>
+                </ul>
+
+            </p>
+        </div>
+    </div>
+
+
+    <div class="card borderless_card">
+        <div class="card-body">
+            <!-- <h5 class="card-title">About this website:</h5> -->
+            <p class="card-text">
+                All rights reserved by Karl N. Redman &copy; {{ copyright_date }}
+            </p>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+
+
+{% endblock %}

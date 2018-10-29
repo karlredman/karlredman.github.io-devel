@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--**************************************************************************************************************************************************************     -->
+    {% if title %}
+    <title>Karl N. Redman [{{ title }}]</title>
+    {% else %}
+    <title>Karl N. Redman</title>
+    {% endif %}
+
+    {% if description %}
+    <meta name="description" content="Personal website of Karl N. Redman. {{ description }}">
+    {% else %}
+    <meta name="description" content="Personal website of Karl N. Redman.">
+    {% endif %}
+
+    {% if keywords %}
+    <meta name="keywords" content="Karl N. Redman, {{ keywords }}" />
+    {% else %}
+    <meta name="keywords" content="Resume,Software Engineer,Systems Engineer,Programmer,Developer,Administrator,linux,Karl N. Redman" />
+    {% endif %}
+
+    <meta name="author" content="Karl N. Redman" />
+
+    {% if copyright_date %}
+    <meta name="copyright" content="&copy; {{ copyright_date }}" />
+    {% else %}
+    <meta name="copyright" content="&copy; 2018" />
+    {% endif %}
+
+    <!--**************************************************************************************************************************************************************     -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}"> <!-- Github needs specific link -->
+
+    <!--**************************************************************************************************************************************************************     -->
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/scss/_variables.scss"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/scss/_functions.scss"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/scss/mixins/_breakpoints.scss"> -->
+
+    <!-- SmartMenus jQuery Bootstrap 4 Addon CSS -->
+    <link href="{{url_for('static', filename='addons/bootstrap-4/jquery.smartmenus.bootstrap-4.css')}}" rel="stylesheet">
+
+    <!-- font awesome for the mini icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- My sheets -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/site.css')}}">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="ngx-bootstrap">
+  <meta name="apple-mobile-web-app-title" content="ngx-bootstrap">
+  <meta name="theme-color" content="#1d1d2b">
+  <meta name="msapplication-navbutton-color" content="#1d1d2b">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+    <!--**************************************************************************************************************************************************************     -->
+    <script type="text/javascript">
+      document.addEventListener("scroll", function() {
+        if (window.pageYOffset > 100)
+          document.getElementById('logo').style.display = "block";
+        else
+          document.getElementById('logo').style.display = "none";
+      });
+    </script>
+  </head>
+
+  <!-- padding accomidates for fixed navbar -->
+  <body style="padding-top:56px;">
+
+    <!--**************************************************************************************************************************************************************     -->
+    <!--**************************************************************************************************************************************************************     -->
+    <!-- Navbar -->
+    <!-- fixed-top is broken: [[v4-beta 3] Navbar fixed-top problem and non scrollable or visible drowpdown menu links > bug ? · Issue #25205 · twbs/bootstrap](https://github.com/twbs/bootstrap/issues/25205) -->
+    <!-- menu scrolling bug: https://github.com/twbs/bootstrap/issues/12738 -->
+    <!-- temp fix is to use sticky-top for non IE and set body pad to 0px -->
+    <!-- Note: stick-top is broken for IE so we're forced to use fixed-top -->
+    <!-- <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark"> -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <!-- <img src="images/parasyte_400x400.png" alt="" style="width:50px;height:50px;"> -->
+          <div id="logo">⇧Karl N. Redman [{{ title }}]</div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+          <!-- Left nav -->
+          <ul class="nav navbar-nav mr-auto">
+          </ul>
+
+          <!-- Right nav -->
+          <ul class="nav navbar-nav">
+
+            <!-- <li class="nav-item"><a class="nav-link" href="https://karlredman.github.io">Home</a></li> -->
+            <!-- <li class="nav-item active"><a class="nav-link" href="https://karlredman.github.io"><i class="fa fa-home"></i> Home</a></li> -->
+            {% if title != "Home" %}
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('index')}}"><i class="fa fa-home"></i> Home</a></li>
+            {% endif %}
+
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" onclick="return false;"><i class="fa fa-file-o"></i> Resume</a>
+              <ul class="dropdown-menu bg-dark">
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('resume') }}"><i class="fa fa-html5"></i>Online</a></li>
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('static', filename='download/Karl_N_Redman.pdf') }}">
+                    <i class="fa fa-file-pdf-o"></i> PDF </a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('static', filename='download/Karl_N_Redman.odt') }}">
+                    <i class="fa fa-file-o"></i> OpenOffice </a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('static', filename='download/Karl_N_Redman.doc') }}">
+                    <i class="fa fa-file-word-o"></i> MS Word (doc) </a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('static', filename='download/Karl_N_Redman.docx') }}">
+                    <i class="fa fa-file-word-o"></i> MS Word (docx) </a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('static', filename='download/Karl_N_Redman.txt') }}">
+                    <i class="fa fa-file-text-o"></i> Text </a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('static', filename='download/Karl_N_Redman.markdown') }}">
+                    <i class="fa fa-file-code-o"></i> Markdown </a> </li>
+              </ul>
+            </li>
+
+            {% if title != "Projects" %}
+            <li class="nav-itme"><a class="nav-link" href="{{ url_for('projects') }}"><i class="fa fa-lightbulb-o"></i> Projects</a></li>
+            {% endif %}
+            {% if title == "Projects" %}
+            <li class="nav-itme"><a class="nav-link" href="{{ url_for('projects_old') }}"><i class="fa fa-lightbulb-o"></i> Older Projects</a></li>
+            {% endif %}
+
+            <li class="nav-item"><a class="nav-link" href="mailto:karl.redman@gmail.com"><i class="fa fa-envelope-o"></i> Email Me</a> </li>
+
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" onclick="return false;"><i class="fa fa-newspaper-o"></i> About</a>
+              <ul class="dropdown-menu bg-dark">
+                {% if title != "About Me" %}
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('about_me') }}"><i class="fa fa-user"></i> About Me</a> </li>
+                {% endif %}
+                {% if title != "About Site" %}
+                <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('about_site') }}"><i class="fa fa-sitemap"></i> About Site</a> </li>
+                {% endif %}
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown text-light bg-dark"><a class="nav-link dropdown-toggle" href="#" onclick="return false;"><i class="fa fa-smile-o"></i> Follow</a>
+              <ul class="dropdown-menu bg-dark">
+                <li> <a class="dropdown-item text-light bg-dark" href="https://it.linkedin.com/in/karl-n-redman-850413">
+                    <i class="fa fa-linkedin"></i> Linked In</a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="https://github.com/karlredman">
+                    <i class="fa fa-github-alt"></i> GitHub</a> </li>
+                <li> <a class="dropdown-item text-light bg-dark" href="http://stackoverflow.com/users/1725771/karl-n-redman">
+                    <i class="fa fa-stack-overflow"></i> Stack Overflow</a></li>
+                <li> <a class="dropdown-item text-light bg-dark" href="https://www.reddit.com/user/grendelkon/">
+                    <i class="fa fa-reddit-alien"></i> Reddit</a></li>
+                <!-- <li> <a class="dropdown-item text-light bg-dark" href="https://www.facebook.com/karl.redman.1">
+                  <i class="fa fa-facebook"></i> Facebook</a></li> -->
+              <li> <a class="dropdown-item text-light bg-dark" href="https://twitter.com/Karl_Redman">
+                  <i class="fa fa-twitter"></i> Twitter</a></li>
+              <!-- <li> <a class="dropdown-item text-light bg-dark" href="https://www.youtube.com/user/grendelkon">
+                <i class="fa fa-youtube-play"></i> YouTube</a></li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--**************************************************************************************************************************************************************     -->
+    <!--**************************************************************************************************************************************************************     -->
+    {% block content %}{% endblock %}
+
+    <!--**************************************************************************************************************************************************************     -->
+    <!--**************************************************************************************************************************************************************     -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <!-- SmartMenus jQuery plugin -->
+    <script type="text/javascript" src="{{url_for('static', filename='jquery.smartmenus.js')}}"></script>
+
+    <!-- SmartMenus jQuery Bootstrap 4 Addon -->
+    <script type="text/javascript" src="{{url_for('static', filename='addons/bootstrap-4/jquery.smartmenus.bootstrap-4.js')}}"></script>
+
+  </body>
+</html>
