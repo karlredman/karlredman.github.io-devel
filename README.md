@@ -40,5 +40,6 @@ python application.py
 ```
 
 ## upload active to github karlredman.github.io
+
 1. copy static output to the site clone
 2. git commit and push
