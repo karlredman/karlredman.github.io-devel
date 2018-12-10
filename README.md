@@ -11,6 +11,7 @@
     * development: karlredman.github.io-devel
 
 ## howto generate the static site from the flask application:
+
 1. cd to `flask_site/`
 2. switch to python 3 (if needed)
     ```
