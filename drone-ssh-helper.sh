@@ -14,7 +14,7 @@
 [ -z "$SSH_HOST" ] && echo "missing ssh host" && exit 3
 [ -z "$TARGET_REPO" ] && echo "missing target repo" && exit 3
 [ -z "$TARGET_REPO_NAME" ] && echo "missing target repo name" && exit 3
-[ -z "$TARGET_REPO_BRANCH" ] && echo "missing target repo name" && exit 3
+[ -z "$TARGET_REPO_BRANCH" ] && echo "missing target repo branch" && exit 3
 
 # write the ssh key.
 mkdir /root/.ssh
