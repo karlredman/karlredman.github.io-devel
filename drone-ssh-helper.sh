@@ -46,7 +46,7 @@ echo "mv docs/* ${TARGET_REPO_NAME}/"
 echo "cd ${TARGET_REPO_NAME}"
 # git add -A
 message=$(git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g' | awk '{printf("%s  ", $0)}'})
-eco $message
+echo $message
 # git commit -am ${message}
 # git commit -am "build test"
 # git push
