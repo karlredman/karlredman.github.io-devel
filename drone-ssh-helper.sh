@@ -6,6 +6,7 @@
 # the trick to making this work is to add the ssh_key from the drone cli:
 # DRONE_SERVER=$DRONE_SERVER DRONE_TOKEN=$DRONE_TOKEN sudo -E bash -c 'drone secret add --repository ${SSH_USER}/${DRONE_REPO} --name ssh_key --data @.ssh/id_rsa'
 
+set -e
 
 # Configures ssh key based on information from secrets
 
@@ -49,11 +50,9 @@ message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 
 # commit and push
 echo "###############################"
-# cd ${TARGET_REPO_NAME}
 cd /target
 git remote -v
 git add -A
 git commit -am "from dev ${message}"
 
-# git push ${TARGET_REPO_BRANCH}
 git push origin master
