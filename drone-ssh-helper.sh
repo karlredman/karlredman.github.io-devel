@@ -37,10 +37,10 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 git clone ${TARGET_REPO}
 
 # clean the target
-echo "rm -rf ${TARGET_REPO_NAME}/*"
+rm -rf ${TARGET_REPO_NAME}/*
 
 # copy/move data
-echo "mv docs/* ${TARGET_REPO_NAME}/"
+mv docs/* ${TARGET_REPO_NAME}/
 
 # formata commit comment from dev repo
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
@@ -48,9 +48,9 @@ message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 # commit and push
 echo "###############################"
 cd ${TARGET_REPO_NAME}
+git remote -v
 git add -A
 git commit -am "from dev ${message}"
-git remote -v
-pwd
 
-git push ${TARGET_REPO_BRANCH}
+# git push ${TARGET_REPO_BRANCH}
+git push origin master
