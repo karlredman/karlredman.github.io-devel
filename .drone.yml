@@ -1,7 +1,8 @@
 kind: pipeline
 name: default
 
-# steps:
+steps:
+
 # - name: install_test
 #   image: plugins/pypi
 #   environment:
