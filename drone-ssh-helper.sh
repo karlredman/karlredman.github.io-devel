@@ -33,20 +33,20 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 # git push git@$SSH_HOST:${SSH_NAME}/${DRONE_REPO}.git ${BRANCH}
 
 # clone the target
-# git clone ${TARGET_REPO}.git
-git clone git@github.com:karlredman/karlredman.github.io.git
+echo "git clone ${TARGET_REPO}.git"
+# git clone git@github.com:karlredman/karlredman.github.io.git
 
 # clean the target
-rm -rf ${TARGET_REPO_NAME}/*
+echo "rm -rf ${TARGET_REPO_NAME}/*"
 
 # copy/move data
-mv docs/* ${TARGET_REPO_NAME}/
+echo "mv docs/* ${TARGET_REPO_NAME}/"
 
 # commit and push
-cd ${TARGET_REPO_NAME}
-git add -A
+echo "cd ${TARGET_REPO_NAME}"
+# git add -A
 message=$(git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g' | awk '{printf("%s  ", $0)}'})
 eco $message
 # git commit -am ${message}
-git commit -am "build test"
-git push
+# git commit -am "build test"
+# git push
