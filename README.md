@@ -1,3 +1,5 @@
+[![Build Status](https://drone-github.parasynthetic.dev/api/badges/karlredman/karlredman.github.io-devel/status.svg)](https://drone-github.parasynthetic.dev/karlredman/karlredman.github.io-devel)
+
 # dev repo for https://karlredman.github.io github pages
 
 ## Notes:
