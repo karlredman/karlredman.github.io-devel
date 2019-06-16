@@ -1,46 +1,51 @@
-# THIS PROJECT
-docs/
-#
-#
 # use the following to clean directory: `git reset HEAD --hard; git clean -fdx`
 #
 # this project:
 #.timetrap-sheet
 
-# keep these (recursively)
-!.gitignore
-!.gitkeep
-
 # Vim files
 *~
 *.swp
+.session
 
-# Can also ignore all directories and files in a directory.
-tmp/
-node_modules/
+# Can also ignore all directories and files in a directory. recursively
+**/tmp/*
+**/node_modules/*
 
 # Development #
 ###############
+.env
 tags
+.tags
 session.vim
+NONE
+.vscode
+
+# c/c++ artifacts
+a.out
+*.so
+*.o
+*.a
+.gdb_history
 
 # python artifacts
+.python-version
 flask_session
 __pycache__
-venv/
+**/venv/*
 
 *.pyc
-__pycache__/
+**/__pycache__/*
 
-instance/
+**/instance/*
 
-.pytest_cache/
+**/.pytest_cache/*
 .coverage
-htmlcov/
+**/htmlcov/*
 
-dist/
-build/
-*.egg-info/
+**/dist/*
+**/build/*
+**/*.egg-info/**
 
 
 
@@ -86,3 +91,14 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# App generated files #
+public/
+!public/.gitkeep
+public_html/
+public_html/.gitkeep
+
+# keep these (recursively)
+!.gitignore
+!.gitkeep
+

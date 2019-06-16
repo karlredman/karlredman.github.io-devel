@@ -3,6 +3,7 @@
 import sys
 from flask_frozen import Freezer
 from app import app
+from app import routes # noQA
 
 freezer = Freezer(app)
 

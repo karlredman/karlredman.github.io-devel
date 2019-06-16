@@ -1,5 +1,5 @@
 # flask
-from flask import request, render_template, redirect, url_for, send_from_directory
+from flask import request, render_template, redirect, url_for, send_from_directory # noQA
 # freeze-flask deps
 from functools import partial
 # data deps

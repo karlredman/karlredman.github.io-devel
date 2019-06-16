@@ -1,8 +1,5 @@
 # dev repo for https://karlredman.github.io github pages
 
-## TODO:
-* create sitemap
-
 ## Notes:
 * Static files for github are stored in `docs/`
 * Use the build directory to populate the github repo for the site
@@ -12,7 +9,7 @@
 
 ## howto generate the static site from the flask application:
 
-1. cd to `flask_site/`
+1. cd to `<project root>/`
 2. switch to python 3 (if needed)
     ```
     pyenv local 3.6.5
