@@ -47,9 +47,9 @@ message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 
 # commit and push
 echo "###############################"
-# cd ${TARGET_REPO_NAME}
+echo message
+cd ${TARGET_REPO_NAME}
 # cd karlredman.github.io
-pushd ${TARGET_REPO_NAME}
 # git add -A
 # git commit -am "from dev ${message}"
 # git remote remove origin
