@@ -34,8 +34,6 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 
 # clone the target
 git clone ${TARGET_REPO}
-ls
-# git clone git@github.com:karlredman/karlredman.github.io.git
 
 # clean the target
 echo "rm -rf ${TARGET_REPO_NAME}/*"
@@ -45,9 +43,8 @@ echo "mv docs/* ${TARGET_REPO_NAME}/"
 
 # commit and push
 echo "cd ${TARGET_REPO_NAME}"
-# git add -A
+git add -A
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
-echo $message
-# git commit -am ${message}
-# git commit -am "build test"
-# git push
+git commit -am "from dev ${message}"
+git commit -am "build test"
+git push
