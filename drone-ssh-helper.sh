@@ -33,7 +33,8 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 # git push git@$SSH_HOST:${SSH_NAME}/${DRONE_REPO}.git ${BRANCH}
 
 # clone the target
-git clone ${TARGET_REPO}.git
+# git clone ${TARGET_REPO}.git
+git clone git@github.com:karlredman/karlredman.github.io.git
 
 # clean the target
 rm -rf ${TARGET_REPO_NAME}/*
