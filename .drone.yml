@@ -2,20 +2,20 @@ kind: pipeline
 name: default
 
 steps:
-- name: install_test
-  image: plugins/pypi
-  environment:
-    TEST_DATA_DIR: ../examples/data/
-  commands:
-    - apk add build-base
-    - apk add python3-dev
-    - apk add libffi-dev
-    - apk add openssl-dev
-    - pip3 install -r ./requirements.txt
-    - pip3 install -e .
-    - flake8 .
-    # build target is ./docs/
-    - ./app.py build
+# - name: install_test
+#   image: plugins/pypi
+#   environment:
+#     TEST_DATA_DIR: ../examples/data/
+#   commands:
+#     - apk add build-base
+#     - apk add python3-dev
+#     - apk add libffi-dev
+#     - apk add openssl-dev
+#     - pip3 install -r ./requirements.txt
+#     - pip3 install -e .
+#     - flake8 .
+#     # build target is ./docs/
+#     - ./app.py build
 
 - name: deploy
   image: docker:git
@@ -26,10 +26,10 @@ steps:
       from_secret: ssh_key
     SSH_HOST:
       from_secret: ssh_host
-    # USER_EMAIL:
-    #   from_secret: user_email
-    # USER_NAME:
-    #   from_secret: user_name
+    USER_EMAIL:
+      from_secret: user_email
+    USER_NAME:
+      from_secret: user_name
     TARGET_REPO:
       from_secret: target_repo
     TARGET_REPO_NAME:
