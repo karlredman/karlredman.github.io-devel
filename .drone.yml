@@ -31,10 +31,6 @@ steps:
       from_secret: user_name
     TARGET_REPO:
       from_secret: target_repo
-    TARGET_REPO_NAME:
-      from_secret: target_repo_name
-    TARGET_REPO_BRANCH:
-      from_secret: target_repo_branch
   commands:
     - git config --global user.email "$${USER_EMAIL}"
     - git config --global user.name "$${USER_NAME}"

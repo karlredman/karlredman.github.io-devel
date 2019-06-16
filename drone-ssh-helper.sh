@@ -14,8 +14,6 @@ set -e
 [ -z "$SSH_KEY" ] && echo "missing ssh key" && exit 3
 [ -z "$SSH_HOST" ] && echo "missing ssh host" && exit 3
 [ -z "$TARGET_REPO" ] && echo "missing target repo" && exit 3
-[ -z "$TARGET_REPO_NAME" ] && echo "missing target repo name" && exit 3
-[ -z "$TARGET_REPO_BRANCH" ] && echo "missing target repo branch" && exit 3
 
 # write the ssh key.
 mkdir /root/.ssh
@@ -38,11 +36,9 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 git clone ${TARGET_REPO} /target
 
 # clean the target
-# rm -rf ${TARGET_REPO_NAME}/*
 rm -rf /target/*
 
 # copy/move data
-# mv docs/* ${TARGET_REPO_NAME}/
 mv docs/* /target/
 
 # formata commit comment from dev repo
