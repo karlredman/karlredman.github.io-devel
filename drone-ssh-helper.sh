@@ -34,20 +34,23 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 # git push git@$SSH_HOST:${SSH_NAME}/${DRONE_REPO}.git ${BRANCH}
 
 # clone the target
-git clone ${TARGET_REPO}
+git clone ${TARGET_REPO} /target
 
 # clean the target
-rm -rf ${TARGET_REPO_NAME}/*
+# rm -rf ${TARGET_REPO_NAME}/*
+rm -rf /target/*
 
 # copy/move data
-mv docs/* ${TARGET_REPO_NAME}/
+# mv docs/* ${TARGET_REPO_NAME}/
+mv docs/* /target/
 
 # formata commit comment from dev repo
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 
 # commit and push
 echo "###############################"
-cd ${TARGET_REPO_NAME}
+# cd ${TARGET_REPO_NAME}
+cd /target
 git remote -v
 git add -A
 git commit -am "from dev ${message}"
