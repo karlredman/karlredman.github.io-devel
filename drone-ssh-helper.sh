@@ -47,4 +47,9 @@ git add -A
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 git commit -am "from dev ${message}"
 git commit -am "build test"
-git push
+git remote remove origin
+git remote add origin ${TARGET_REPO}
+git remote -v
+
+pwd
+# git push ${TARGET_BRANCH}
