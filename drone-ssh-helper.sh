@@ -42,7 +42,7 @@ echo "rm -rf ${TARGET_REPO_NAME}/*"
 echo "mv docs/* ${TARGET_REPO_NAME}/"
 
 # commit and push
-echo "cd ${TARGET_REPO_NAME}"
+cd ${TARGET_REPO_NAME}
 git add -A
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 git commit -am "from dev ${message}"
