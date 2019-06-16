@@ -53,5 +53,6 @@ cd ${TARGET_REPO_NAME}
 # git remote remove origin
 # git remote add origin ${TARGET_REPO}
 git remote -v
+pwd
 
 # git push ${TARGET_REPO_BRANCH}
