@@ -30,7 +30,7 @@ steps:
     #   from_secret: user_name
     TARGET_REPO:
       from_secret: target_repo
-    TARGET_REPO_NAME: master
+    TARGET_REPO_NAME:
       from_secret: target_repo_name
   commands:
     - git config --global user.email "$${USER_EMAIL}"
