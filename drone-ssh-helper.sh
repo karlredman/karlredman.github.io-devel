@@ -14,6 +14,7 @@
 [ -z "$SSH_HOST" ] && echo "missing ssh host" && exit 3
 [ -z "$TARGET_REPO" ] && echo "missing target repo" && exit 3
 [ -z "$TARGET_REPO_NAME" ] && echo "missing target repo name" && exit 3
+[ -z "$TARGET_REPO_BRANCH" ] && echo "missing target repo name" && exit 3
 
 # write the ssh key.
 mkdir /root/.ssh
@@ -41,15 +42,19 @@ echo "rm -rf ${TARGET_REPO_NAME}/*"
 # copy/move data
 echo "mv docs/* ${TARGET_REPO_NAME}/"
 
-# commit and push
-cd ${TARGET_REPO_NAME}
-git add -A
+# formata commit comment from dev repo
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
-git commit -am "from dev ${message}"
-git commit -am "build test"
-git remote remove origin
-git remote add origin ${TARGET_REPO}
+
+# commit and push
+echo "###############################"
+# cd ${TARGET_REPO_NAME}
+# cd karlredman.github.io
+pushd ${TARGET_REPO_NAME}
+# git add -A
+# git commit -am "from dev ${message}"
+# git remote remove origin
+# git remote add origin ${TARGET_REPO}
 git remote -v
 
 pwd
-# git push ${TARGET_BRANCH}
+# git push ${TARGET_REPO_BRANCH}
