@@ -49,10 +49,7 @@ mv docs/* /target/
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 
 # commit and push
-echo "###############################"
 cd /target
-git remote -v
 git add -A
 git commit -am "from dev ${message}"
-
 git push origin master
