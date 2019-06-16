@@ -1,8 +1,7 @@
 from flask import Flask
 
+# setup objects
 app = Flask(__name__)
 
-# from app import routes #noQA
-
-app.config.setdefault('FREEZER_DESTINATION', '../docs')
-
+# our views
+from app import routes # noQA

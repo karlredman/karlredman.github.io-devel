@@ -7,12 +7,12 @@
     * production: karlredman.github.io
     * development: karlredman.github.io-devel
 
-## howto generate the static site from the flask application:
+## Run the Development environment
 
 1. cd to `<project root>/`
 2. switch to python 3 (if needed)
     ```
-    pyenv local 3.6.5
+    pyenv local <version>
     ```
 3. setup virtual environment for development and testing
     ```
@@ -20,25 +20,42 @@
     source venv/bin/activate
     pip install -r requirements.py
     ```
-4. build the site
+4. Prepare the site
+  * setup localized package
+
+  ```
+  pip install -e .
+  ```
+
+5. run the site 1 of 2 ways
+    * via flask
+      * set environment for flask runtime
+
+      ```
+      export FLASK_APP=appx
+      export FLASK_ENV=developmentx
+      ```
+
+      * run flask
+      ```
+      flask run
+      ```
+
+    * run the included script
     ```
-    # Note: this will delete the contents of app/build
-    python ./application.py build
+    ./app.py
     ```
-5. files will be in `docs/`
 
-6. test host the site
-```
-twistd -n web --port tcp:5000 --path .
-```
+## Building the static site
 
-## run the development site:
-
+* building
 ```
-python application.py
+# files will be in `docs/`
+./app.py build
 ```
 
-## upload active to github karlredman.github.io
-
-1. copy static output to the site clone
-2. git commit and push
+* review the static site
+```
+pip install twisted
+twistd -n web --port tcp:5000 --path docs/
+```
