@@ -5,8 +5,6 @@ steps:
 
 - name: install_test
   image: plugins/pypi
-  environment:
-    TEST_DATA_DIR: ../examples/data/
   commands:
     - apk add build-base
     - apk add python3-dev
