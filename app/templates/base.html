@@ -130,9 +130,11 @@
             <li class="nav-itme"><a class="nav-link" href="{{ url_for('projects_old') }}"><i class="fa fa-lightbulb-o"></i> Older Projects</a></li>
             {% endif %}
 
+            <li class="nav-item"><a class="nav-link" href="https://karlredman.github.io/Articles"><i class="fa fa-newspaper-o"></i> Articles</a> </li>
+
             <li class="nav-item"><a class="nav-link" href="mailto:karl.redman@gmail.com"><i class="fa fa-envelope-o"></i> Email Me</a> </li>
 
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" onclick="return false;"><i class="fa fa-newspaper-o"></i> About</a>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" onclick="return false;"><i class="fa fa-eye"></i> About</a>
               <ul class="dropdown-menu bg-dark">
                 {% if title != "About Me" %}
                 <li> <a class="dropdown-item text-light bg-dark" href="{{ url_for('about_me') }}"><i class="fa fa-user"></i> About Me</a> </li>
@@ -142,6 +144,7 @@
                 {% endif %}
               </ul>
             </li>
+
 
             <li class="nav-item dropdown text-light bg-dark"><a class="nav-link dropdown-toggle" href="#" onclick="return false;"><i class="fa fa-smile-o"></i> Follow</a>
               <ul class="dropdown-menu bg-dark">
