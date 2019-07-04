@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source ~/root/.bashrc
+set -e
+
+source ~/.bashrc
 
 py_version=$1
 
