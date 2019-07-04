@@ -25,13 +25,6 @@ touch /root/.ssh/known_hosts
 chmod 600 /root/.ssh/known_hosts
 ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 
-# reset repo origin -perpetual build...!!!
-# git remote remove origin
-# git remote add origin git@${SSH_HOST}:${SSH_NAME}/${DRONE_REPO}.git
-# git remote -v
-# # push to repo
-# git push git@$SSH_HOST:${SSH_NAME}/${DRONE_REPO}.git ${BRANCH}
-
 # clone the target
 git clone ${TARGET_REPO} /target
 
@@ -47,5 +40,9 @@ message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 # commit and push
 cd /target
 git add -A
-git commit -am "from dev ${message}"
-git push origin master
+
+if [[ `git status --porcelain` ]]; then
+    # only attempt checkin with Changes
+    git commit -am "from dev ${message}"
+    git push origin master
+fi
