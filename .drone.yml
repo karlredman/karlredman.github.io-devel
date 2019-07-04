@@ -3,18 +3,32 @@ name: default
 
 steps:
 
-- name: install_test
-  image: plugins/pypi
+- name: test
+  image: docker.parasynthetic.dev/karlredman/flask-base:latest
+  pull: if-not-exists
   commands:
-    - apk add build-base
-    - apk add python3-dev
-    - apk add libffi-dev
-    - apk add openssl-dev
-    - pip3 install -r ./requirements.txt
-    - pip3 install -e .
-    - flake8 .
-    # build target is ./docs/
-    - ./app.py build
+    # - ./test.sh 3.5.3
+    # - ./test.sh 3.6.8
+    - ./test.sh 3.7.2
+
+- name: build
+  image: docker.parasynthetic.dev/karlredman/flask-base:latest
+  pull: if-not-exists
+  commands:
+    - bash -c 'source /root/.bashrc && ./app.py build'
+
+# - name: install_test
+#   image: plugins/pypi
+#   commands:
+#     - apk add build-base
+#     - apk add python3-dev
+#     - apk add libffi-dev
+#     - apk add openssl-dev
+#     - pip3 install -r ./requirements.txt
+#     - pip3 install -e .
+#     - flake8 .
+#     # build target is ./docs/
+#     - ./app.py build
 
 - name: deploy
   image: docker:git

@@ -41,7 +41,7 @@ rm -rf /target/*
 # copy/move data
 mv docs/* /target/
 
-# formata commit comment from dev repo
+# format commit comment from dev repo
 message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 
 # commit and push

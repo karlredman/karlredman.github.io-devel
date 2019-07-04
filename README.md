@@ -61,3 +61,9 @@
 pip install twisted
 twistd -n web --port tcp:5000 --path docs/
 ```
+
+## drone cli project build
+
+```
+sudo drone exec --exclude deploy --secret-file ~/.drone_secrets/karlredman_github_io.secrets
+```
