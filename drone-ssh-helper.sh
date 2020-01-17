@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # reference:  [[SOLVED] Can i use plugins/git to clone another repo? - General Discussion - Drone](https://discourse.drone.io/t/solved-can-i-use-plugins-git-to-clone-another-repo/1553/6?u=karlredman)
 # reference: [Secret in Drone 1.0.0-rc.1 · Issue #130 · appleboy/drone-ssh](https://github.com/appleboy/drone-ssh/issues/130)
@@ -50,7 +50,8 @@ git add -A
 
 git status --porcelain
 
-if git status --porcelain; then
+# if git status --porcelain; then
+if [[ `git status --porcelain` ]]; then
     # only attempt checkin with Changes
     echo "attempting to commit/push build..."
     git commit -am "from dev ${message}"

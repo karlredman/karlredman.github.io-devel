@@ -12,7 +12,7 @@ from app import app
 # # find copyright date -relative to (static) site generation
 copyright_date = datetime.now().year
 employment_status = True
-seeking_employment = False
+seeking_employment = True
 
 # ####### routes
 
