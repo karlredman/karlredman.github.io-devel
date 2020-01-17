@@ -27,7 +27,7 @@ steps:
     SSH_HOST:
       from_secret: ssh_host
     USER_EMAIL:
-      from_secret: user_email
+      from_secret: ssh_email
     USER_NAME:
       from_secret: user_name
     TARGET_REPO:
