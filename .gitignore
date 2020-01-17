@@ -2,6 +2,7 @@
 #
 # this project:
 #.timetrap-sheet
+**/docs/*
 
 # Vim files
 *~
