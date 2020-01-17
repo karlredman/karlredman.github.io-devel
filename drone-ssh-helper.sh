@@ -45,8 +45,10 @@ git add -A
 
 git status --porcelain
 
-if [[ `git status --porcelain` ]]; then
-    # only attempt checkin with Changes
-    git commit -am "from dev ${message}"
-    git push origin master
-fi
+# if [[ `git status --porcelain` ]]; then
+#     # only attempt checkin with Changes
+#     git commit -am "from dev ${message}"
+#     git push origin master
+# fi
+git commit -am "from dev ${message}"
+git push origin master
