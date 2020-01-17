@@ -14,7 +14,7 @@ set -e
 [ -z "$SSH_KEY" ] && echo "missing ssh key" && exit 3
 [ -z "$SSH_HOST" ] && echo "missing ssh host" && exit 3
 [ -z "$SSH_EMAIL" ] && echo "missing ssh email" && exit 3
-[ -z "$SSG_NAME" ] && echo "missing ssh name" && exit 3
+[ -z "$SSH_NAME" ] && echo "missing ssh name" && exit 3
 [ -z "$TARGET_REPO" ] && echo "missing target repo" && exit 3
 
 # write the ssh key.
