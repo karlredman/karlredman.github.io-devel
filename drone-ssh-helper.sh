@@ -14,7 +14,7 @@ set -e
 [ -z "$SSH_KEY" ] && echo "missing ssh key" && exit 3
 [ -z "$SSH_HOST" ] && echo "missing ssh host" && exit 3
 [ -z "$SSH_EMAIL" ] && echo "missing ssh email" && exit 3
-[ -z "$USER_NAME" ] && echo "missing user name" && exit 3
+[ -z "$SSG_NAME" ] && echo "missing ssh name" && exit 3
 [ -z "$TARGET_REPO" ] && echo "missing target repo" && exit 3
 
 # write the ssh key.
@@ -27,8 +27,8 @@ touch /root/.ssh/known_hosts
 chmod 600 /root/.ssh/known_hosts
 ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 
-git config --global user.email "${USER_EMAIL}"
-git config --global user.name "${USER_NAME}"
+git config --global user.email "${SSH_EMAIL}"
+git config --global user.name "${SSH_NAME}"
 
 # clone the target
 git clone ${TARGET_REPO} /target

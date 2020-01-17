@@ -26,10 +26,10 @@ steps:
       from_secret: ssh_key
     SSH_HOST:
       from_secret: ssh_host
-    USER_EMAIL:
+    SSH_EMAIL:
       from_secret: ssh_email
-    USER_NAME:
-      from_secret: user_name
+    SSH_NAME:
+      from_secret: ssh_username
     TARGET_REPO:
       from_secret: target_repo
   commands:
