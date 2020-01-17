@@ -31,6 +31,8 @@ git clone ${TARGET_REPO} /target
 # clean the target
 rm -rf /target/*
 
+ls -al docs/
+
 # copy/move data
 mv docs/* /target/
 
@@ -40,6 +42,8 @@ message=`git log -1 | sed -n '1p;$p' | sed -e 's/^ *//g'`
 # commit and push
 cd /target
 git add -A
+
+git status --porcelain
 
 if [[ `git status --porcelain` ]]; then
     # only attempt checkin with Changes
